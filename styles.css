@@ -9,8 +9,7 @@ body {
 
 /* Banner superior */
 .banner {
-    background: url('banner.jpg') center/cover no-repeat;
-    color: white;
+     color: white;
     text-align: center;
     padding: 50px 20px;
 }
