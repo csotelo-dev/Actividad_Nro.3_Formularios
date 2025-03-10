@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Online</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="banner">
+        <img src="./img/logo.png" alt="Logo Tienda" class="logo">
+        <h1 style="color: #000">Bienvenidos a nuestra Tienda Online</h1>
+    </header>
+    
+    <nav class="menu">
+        <ul>
+            <li><a href="#tienda">Nuestra Tienda</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#contacto">Contáctenos</a></li>
+            <li><a href="#cotizacion">Solicitud de Cotización</a></li>
+            <li><a href="#cuento">Diseña tu cuento</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="tienda" class="seccion">
+            <h2>Nuestra Tienda Online</h2>
+            <p>Somos un equipo dedicado a ofrecer productos de calidad.</p>
+            <ul>
+                <li>Producto 1</li>
+                <li>Producto 2</li>
+                <li>Producto 3</li>
+            </ul>
+        </section>
+        
+        <section id="servicios" class="seccion">
+            <h2>Servicios</h2>
+            <ul>
+                <li>Envío rápido y seguro</li>
+                <li>Garantía en todos los productos</li>
+            </ul>
+        </section>
+        
+        <section id="contacto" class="seccion">
+            <h2>Contáctenos</h2>
+            <p>WhatsApp: +57 301 456 7890</p>
+            <p>Dirección: Calle 59 #10-63, Medellín, Colombia</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126916.7411692729!2d-75.66361344761124!3d6.244197043328658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428dfb80fad05%3A0x42137cfcc7b53b56!2sMedell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1741578860077!5m2!1ses!2sco" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        
+        </section>
+        
+        <section id="cotizacion" class="seccion">
+            <h2>Solicitud de Cotización</h2>
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="producto">Producto de interés:</label>
+                <input type="text" id="producto" name="producto" required>
+                
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <button type="submit">Solicitar Cotización</button>
+            </form>
+        </section>
+
+        <section id="cuento" class="seccion">
+            <h2>Construye tu Cuento</h2>
+            <form id="cuentoForm">
+                <label for="nombreCompleto">Nombres y Apellidos:</label>
+                <input type="text" id="nombreCompleto" name="nombreCompleto" required>
+                
+                <label for="apodo">Apodo:</label>
+                <input type="text" id="apodo" name="apodo" required>
+                
+                <label for="cabello">Color de Cabello:</label>
+                <input type="text" id="cabello" name="cabello" required>
+                
+                <label for="ojos">Color de Ojos:</label>
+                <input type="text" id="ojos" name="ojos" required>
+                
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" required>
+                
+                <label for="hobby">Hobby:</label>
+                <input type="text" id="hobby" name="hobby" required>
+                
+                <button type="button" onclick="generarCuento()">Continuar</button>
+            </form>
+
+            <div id="resultadoCuento" class="seccion" style="display:none; margin-top:20px;">
+                <h3>Tu Cuento Personalizado</h3>
+                <p id="cuentoTexto"></p>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Tienda Online - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        function generarCuento() {
+            const nombreCompleto = document.getElementById("nombreCompleto").value;
+            const apodo = document.getElementById("apodo").value;
+            const cabello = document.getElementById("cabello").value;
+            const ojos = document.getElementById("ojos").value;
+            const edad = document.getElementById("edad").value;
+            const hobby = document.getElementById("hobby").value;
+            
+            const cuento = `Había una vez una persona llamada ${nombreCompleto}, aunque todos le decían ${apodo}. 
+            Con su hermoso cabello de color ${cabello} y sus ojos ${ojos}, siempre destacaba en cualquier lugar. 
+            A sus ${edad} años, ${apodo} tenía una pasión especial: ${hobby}. Pasaba horas disfrutando de su hobby favorito, 
+            lo que le hacía sentir increíblemente feliz. Un día, su pasión lo llevó a una aventura inesperada, donde descubrió que el verdadero tesoro era compartir su alegría con los demás.`;            
+            document.getElementById("cuentoTexto").innerText = cuento;
+            document.getElementById("resultadoCuento").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
